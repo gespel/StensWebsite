@@ -19,8 +19,6 @@ impl GitScraper {
 
         let git_json: Value = serde_json::from_str(&body).unwrap();
 
-        println!("{:#?}", git_json);
-
         if let Some(number) = git_json["public_repos"].as_u64() {
             number_repos = number;
         }
