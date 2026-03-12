@@ -39,7 +39,7 @@ async fn main() {
         .nest_service("/static", serve_dir.clone())
         .layer(Extension(tera));
 
-    let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8081));
     println!("Server started on http://{}", addr);
 
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
